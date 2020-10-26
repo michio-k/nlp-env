@@ -1,0 +1,7 @@
+jupyterlab
+numpy
+pandas
+scipy
+matplotlib
+scikit-learn
+mecab-python3

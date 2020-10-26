@@ -1,0 +1,21 @@
+version: '3'
+
+volumes:
+    data:
+    notebooks:
+    scipt:
+
+services:
+    jupyter:
+        image: nlp-env:1.0
+        # build:
+        #     context: .
+        container_name: nlp-env-dev
+        volumes:
+            - ./data:/workdir/data
+            - ./notebooks:/workdir/notebooks
+            - ./scipt:/workdir/script
+        tty: true
+        ports:
+            - 8888:8888
+        command: sh start.sh
