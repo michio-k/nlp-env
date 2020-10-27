@@ -14,7 +14,8 @@ services:
         volumes:
             - ./data:/workdir/data
             - ./notebooks:/workdir/notebooks
-            - ./scipt:/workdir/script
+            - ./script:/workdir/script
+            - ./mecab-ipadic-neologd:/workdir/mecab-ipadic-neologd
         tty: true
         ports:
             - 8888:8888

@@ -17,11 +17,13 @@ RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y xz-utils \
     && apt-get install -y file \
     && apt-get install -y sudo \
+    && apt-get install -y vim \
     && apt-get -y clean
 
-# RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
-#     && cd mecab-ipadic-neologd
-# RUN bin/install-mecab-ipadic-neologd -n -y
+RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
+WORKDIR /workdir/mecab-ipadic-neologd
+RUN ./bin/install-mecab-ipadic-neologd -n -y
+RUN ln -s /etc/mecabrc /usr/local/etc/mecabrc
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt

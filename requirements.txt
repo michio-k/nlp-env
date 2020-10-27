@@ -5,3 +5,5 @@ scipy
 matplotlib
 scikit-learn
 mecab-python3
+word2vec
+fasttext
