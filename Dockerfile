@@ -25,7 +25,9 @@ WORKDIR /workdir/mecab-ipadic-neologd
 RUN ./bin/install-mecab-ipadic-neologd -n -y
 RUN ln -s /etc/mecabrc /usr/local/etc/mecabrc
 
+WORKDIR /workdir
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 RUN jupyter serverextension enable --py jupyterlab
+RUN jupyter notebook --generate-config
